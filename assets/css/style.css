@@ -16,6 +16,144 @@
   --border-radius: 8px;
 }
 
+/* Add to your CSS */
+.typing-text {
+  color: var(--secondary-color);
+  font-weight: 600;
+  position: relative;
+}
+.typing-text::after {
+  content: "|";
+  animation: blink 1s infinite;
+}
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+/* Replace previous .floating-icon styles with this: */
+.floating-icon {
+  position: absolute;
+  font-size: 1.5rem;
+  color: var(--secondary-color);
+  opacity: 0.7;
+  animation: float 15s ease-in-out infinite both;
+}
+
+/* Smoother 3D-like floating path */
+@keyframes float {
+  0% {
+    transform: translate(10vw, 10vh) rotate(0deg);
+  }
+  25% {
+    transform: translate(calc(10vw + 20px), calc(10vh - 30px)) rotate(5deg);
+  }
+  50% {
+    transform: translate(calc(10vw - 15px), calc(10vh + 20px)) rotate(-3deg);
+  }
+  75% {
+    transform: translate(calc(10vw + 10px), calc(10vh - 10px)) rotate(2deg);
+  }
+  100% {
+    transform: translate(10vw, 10vh) rotate(0deg);
+  }
+}
+
+/* Position each icon differently */
+.floating-icon:nth-child(1) {
+  top: 20%;
+  left: 5%;
+  animation-delay: 0s;
+  font-size: 2rem;
+}
+.floating-icon:nth-child(2) {
+  top: 60%;
+  left: 80%;
+  animation-delay: -5s;
+}
+.floating-icon:nth-child(3) {
+  top: 50%;
+  left: 15%;
+  animation-delay: -10s;
+}
+.floating-icon:nth-child(4) {
+  top: 80%;
+  left: 10%;
+  animation-delay: -10s;
+}
+.floating-icon:nth-child(5) {
+  top: 15%;
+  left: 23%;
+  animation-delay: -10s;
+}
+.floating-icon:nth-child(6) {
+  top: 25%;
+  left: 74%;
+  animation-delay: -10s;
+}
+.floating-icon:nth-child(7) {
+  top: 45%;
+  left: 64%;
+  animation-delay: -10s;
+}
+.rustic-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url("data:image/svg+xml;utf8,<svg...>") repeat; /* SVG wood pattern */
+  mix-blend-mode: multiply;
+  opacity: 0.15;
+}
+
+.btn.pulse {
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(139, 90, 43, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 12px rgba(139, 90, 43, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(139, 90, 43, 0);
+  }
+}
+
+.scroll-down {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.mouse {
+  width: 25px;
+  height: 40px;
+  border: 2px solid var(--secondary-color);
+  border-radius: 15px;
+}
+.wheel {
+  width: 4px;
+  height: 8px;
+  background: var(--secondary-color);
+  margin: 5px auto;
+  animation: scroll 2s infinite;
+}
+@keyframes scroll {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+}
+
 * {
   margin: 0;
   padding: 0;

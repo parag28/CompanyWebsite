@@ -77,6 +77,23 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  // Add to your JS
+  const typingText = document.querySelector(".typing-text");
+  const services = [
+    "websites",
+    "ML solutions",
+    "digital tools",
+    "smart systems",
+  ];
+  let i = 0;
+
+  function typeWriter() {
+    typingText.textContent = services[i];
+    i = (i + 1) % services.length;
+    setTimeout(typeWriter, 2000);
+  }
+  typeWriter();
+
   // Animation on scroll
   function animateOnScroll() {
     const elements = document.querySelectorAll(
